@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>郭晓燕 Anna-Yan Guo | 无线电能传输 · 电力电子</title>
+<meta name="description" content="郭晓燕 (Anna-Yan Guo) 的个人主页：无线电能传输、电力电子、电磁场仿真、电力系统优化。">
+<style>
+:root{
+  --blue:#2F4B7C;
+  --blue-deep:#1F3358;
+  --blue-soft:#E9EEF6;
+  --gray:#5B6573;
+  --gray-light:#F3F4F6;
+  --line:#DDE1E7;
+  --orange:#F5A623;
+  --bg:#FBFBF9;
+  --ink:#1E2633;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Roboto,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+
+/* 占位文字高亮：替换完成后可删除 class="ph" */
+.ph{background:linear-gradient(transparent 62%,rgba(245,166,35,.38) 62%)}
+
+/* 导航 */
+header{position:sticky;top:0;z-index:20;background:rgba(251,251,249,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-weight:700;color:var(--blue);letter-spacing:.5px}
+.logo i{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--orange);margin-right:8px}
+nav ul{display:flex;gap:22px;list-style:none;align-items:center}
+nav a.link{font-size:14px;color:var(--gray);transition:color .2s}
+nav a.link:hover{color:var(--blue)}
+.lang{border:1.5px solid var(--blue);background:transparent;color:var(--blue);padding:4px 14px;border-radius:999px;font-size:13px;font-weight:600;cursor:pointer;transition:.2s}
+.lang:hover{background:var(--blue);color:#fff}
+@media(max-width:700px){nav a.link{display:none}}
+
+/* 首屏 */
+.hero{padding:64px 0 40px;display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
+@media(max-width:820px){.hero{grid-template-columns:1fr;padding-top:36px}}
+.eyebrow{color:var(--orange);font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase}
+h1{font-size:clamp(34px,6vw,54px);line-height:1.15;margin:10px 0 6px;color:var(--blue-deep)}
+h1 small{display:block;font-size:.45em;font-weight:500;color:var(--gray);letter-spacing:1px;margin-top:6px}
+.tagline{font-size:18px;color:var(--gray);max-width:520px;margin:16px 0 22px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.chip{font-size:13px;padding:5px 13px;border-radius:999px;background:var(--blue-soft);color:var(--blue)}
+.chip.o{background:#FFF2D9;color:#9A6200}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:11px 22px;border-radius:10px;font-weight:600;font-size:15px;transition:.2s}
+.btn.primary{background:var(--blue);color:#fff}
+.btn.primary:hover{background:var(--blue-deep)}
+.btn.ghost{border:1.5px solid var(--line);color:var(--blue)}
+.btn.ghost:hover{border-color:var(--orange);color:var(--ink)}
+.art{width:100%;max-width:440px;justify-self:center}
+
+/* 通用区块 */
+section{padding:64px 0}
+section.alt{background:var(--gray-light)}
+.sec-title{display:flex;align-items:baseline;gap:12px;margin-bottom:30px}
+.sec-title h2{font-size:28px;color:var(--blue-deep)}
+.sec-title .bar{flex:0 0 36px;height:4px;border-radius:2px;background:var(--orange);align-self:center}
+.about p{max-width:760px;font-size:17px;color:#2b3444;margin-bottom:14px}
+
+/* 技能 */
+.grid{display:grid;gap:18px}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){.g4{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.g4,.g3{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;transition:.25s}
+.card:hover{transform:translateY(-3px);border-color:var(--orange);box-shadow:0 8px 22px rgba(47,75,124,.08)}
+.card .ic{width:38px;height:38px;border-radius:10px;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center;font-size:18px;margin-bottom:12px}
+.card h3{font-size:17px;color:var(--blue-deep);margin-bottom:6px}
+.card p{font-size:14.5px;color:var(--gray)}
+
+/* 项目 */
+.projects{display:grid;gap:20px}
+.proj{background:#fff;border:1px solid var(--line);border-left:5px solid var(--orange);border-radius:14px;padding:24px 26px}
+.proj header{position:static;background:none;backdrop-filter:none;border:0;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin-bottom:14px}
+.tag{font-size:12px;padding:3px 10px;border-radius:999px;background:var(--blue-soft);color:var(--blue);font-weight:600}
+.proj h3{font-size:19px;color:var(--blue-deep)}
+.rows{display:grid;grid-template-columns:96px 1fr;gap:10px 18px}
+.rows dt{font-size:13px;font-weight:700;color:var(--orange);letter-spacing:.5px;padding-top:2px}
+.rows dd{font-size:15px;color:#2b3444}
+@media(max-width:560px){.rows{grid-template-columns:1fr;gap:2px}.rows dd{margin-bottom:10px}}
+
+/* 性格 */
+.trait .num{font-size:30px;font-weight:800;color:var(--orange);line-height:1}
+.trait h3{margin-top:8px}
+
+/* 联系 */
+.contact{background:var(--blue-deep);color:#fff;border-radius:20px;padding:42px 32px;text-align:center}
+.contact h2{font-size:28px;margin-bottom:8px}
+.contact p{color:#C7D2E6;margin-bottom:24px}
+.links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.links a{padding:11px 22px;border-radius:10px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);font-weight:600;transition:.2s}
+.links a:hover{background:var(--orange);color:var(--ink);border-color:var(--orange)}
+footer{text-align:center;color:var(--gray);font-size:13px;padding:30px 0 40px}
+
+/* 首屏线圈动画 */
+.pulse{animation:flow 2.4s linear infinite}
+.pulse.d2{animation-delay:.8s}.pulse.d3{animation-delay:1.6s}
+@keyframes flow{0%{opacity:0;transform:translateX(0)}15%{opacity:1}85%{opacity:1}100%{opacity:0;transform:translateX(150px)}}
+.ring{animation:breathe 3s ease-in-out infinite;transform-origin:center;transform-box:fill-box}
+@keyframes breathe{0%,100%{opacity:.25}50%{opacity:.7}}
+@media(prefers-reduced-motion:reduce){.pulse,.ring{animation:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo"><i></i><span data-zh="郭晓燕" data-en="Anna-Yan Guo">郭晓燕</span></a>
+    <nav>
+      <ul>
+        <li><a class="link" href="#about" data-zh="关于我" data-en="About">关于我</a></li>
+        <li><a class="link" href="#skills" data-zh="专业技能" data-en="Skills">专业技能</a></li>
+        <li><a class="link" href="#projects" data-zh="科研项目" data-en="Projects">科研项目</a></li>
+        <li><a class="link" href="#character" data-zh="工作方式" data-en="Working Style">工作方式</a></li>
+        <li><a class="link" href="#contact" data-zh="联系" data-en="Contact">联系</a></li>
+        <li><button class="lang" id="langBtn" type="button" aria-label="切换语言 / Switch language">EN</button></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- 首屏 -->
+<div class="wrap hero">
+  <div>
+    <div class="eyebrow" data-zh="无线电能传输 · 电力电子" data-en="Wireless Power Transfer · Power Electronics">无线电能传输 · 电力电子</div>
+    <h1>
+      <span data-zh="郭晓燕" data-en="Anna-Yan Guo">郭晓燕</span>
+      <small data-zh="Anna-Yan Guo" data-en="郭晓燕">Anna-Yan Guo</small>
+    </h1>
+    <p class="tagline" data-zh="对科研充满热情，专注无线电能传输与电力电子，认同公司文化，期待与团队共同成长。" data-en="Driven by research curiosity, focused on wireless power transfer and power electronics, and eager to grow with a team whose culture I share.">对科研充满热情，专注无线电能传输与电力电子，认同公司文化，期待与团队共同成长。</p>
+    <div class="chips">
+      <span class="chip o" data-zh="无线电能传输" data-en="Wireless Power Transfer">无线电能传输</span>
+      <span class="chip" data-zh="电力电子科研" data-en="Power Electronics R&amp;D">电力电子科研</span>
+      <span class="chip" data-zh="电源设计" data-en="Power Supply Design">电源设计</span>
+      <span class="chip" data-zh="电力系统优化" data-en="Power System Optimization">电力系统优化</span>
+    </div>
+    <div class="btns">
+      <a class="btn primary" href="#projects" data-zh="查看科研项目" data-en="View Projects">查看科研项目</a>
+      <a class="btn ghost" href="resume.pdf" target="_blank" rel="noopener" data-zh="下载简历 PDF" data-en="Download Résumé (PDF)">下载简历 PDF</a>
+    </div>
+  </div>
+
+  <!-- 创意图形：发射线圈 → 接收线圈，橙色能量脉冲 -->
+  <svg class="art" viewBox="0 0 440 300" role="img" aria-label="Wireless power transfer coils illustration">
+    <defs>
+      <linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#2F4B7C"/><stop offset="1" stop-color="#5B7BB0"/></linearGradient>
+    </defs>
+    <rect x="8" y="30" width="424" height="240" rx="26" fill="#E9EEF6"/>
+    <!-- 发射线圈 -->
+    <g fill="none" stroke="url(#g1)" stroke-width="5" stroke-linecap="round">
+      <ellipse cx="95" cy="150" rx="26" ry="82"/>
+      <ellipse cx="95" cy="150" rx="17" ry="60" opacity=".7"/>
+      <ellipse cx="95" cy="150" rx="8" ry="38" opacity=".5"/>
+    </g>
+    <!-- 接收线圈 -->
+    <g fill="none" stroke="#5B6573" stroke-width="5" stroke-linecap="round">
+      <ellipse cx="345" cy="150" rx="26" ry="82"/>
+      <ellipse cx="345" cy="150" rx="17" ry="60" opacity=".7"/>
+      <ellipse cx="345" cy="150" rx="8" ry="38" opacity=".5"/>
+    </g>
+    <!-- 磁场线 -->
+    <g fill="none" stroke="#2F4B7C" stroke-width="1.6" stroke-dasharray="4 6" opacity=".55">
+      <path d="M121 150 C 190 80, 250 80, 319 150"/>
+      <path d="M121 150 C 190 220, 250 220, 319 150"/>
+      <path d="M121 150 L 319 150"/>
+    </g>
+    <circle class="ring" cx="220" cy="150" r="36" fill="none" stroke="#F5A623" stroke-width="2"/>
+    <circle class="ring" cx="220" cy="150" r="56" fill="none" stroke="#F5A623" stroke-width="1.2" style="animation-delay:.7s"/>
+    <!-- 能量脉冲 -->
+    <g transform="translate(125,150)" fill="#F5A623">
+      <circle class="pulse" r="6"/><circle class="pulse d2" r="6"/><circle class="pulse d3" r="6"/>
+    </g>
+    <!-- 小灯泡：负载 -->
+    <circle cx="395" cy="150" r="11" fill="#F5A623" opacity=".9"/>
+    <path d="M371 150 H384" stroke="#5B6573" stroke-width="3" stroke-linecap="round"/>
+    <text x="95" y="258" text-anchor="middle" font-size="12" fill="#5B6573" font-family="sans-serif">TX</text>
+    <text x="345" y="258" text-anchor="middle" font-size="12" fill="#5B6573" font-family="sans-serif">RX</text>
+  </svg>
+</div>
+
+<!-- 关于我 -->
+<section id="about" class="about">
+  <div class="wrap">
+    <div class="sec-title"><span class="bar"></span><h2 data-zh="关于我" data-en="About Me">关于我</h2></div>
+    <p data-zh="我专注于无线电能传输与电力电子方向，从电磁场仿真、线圈与电路设计，到系统层面的储能与电力系统优化，都有实际的科研与项目经历。我享受把复杂的物理问题拆解、建模、验证，并最终落到可运行方案上的过程。" data-en="My work centers on wireless power transfer and power electronics, from electromagnetic field simulation and coil and circuit design to system-level energy storage and power system optimization. I enjoy breaking complex physical problems down, modeling them, validating them, and turning them into working solutions.">我专注于无线电能传输与电力电子方向，从电磁场仿真、线圈与电路设计，到系统层面的储能与电力系统优化，都有实际的科研与项目经历。我享受把复杂的物理问题拆解、建模、验证，并最终落到可运行方案上的过程。</p>
+    <p class="ph" data-zh="【请替换：学校/专业/学历/毕业时间，以及一两句你最想让招聘方记住的话。】" data-en="[Replace: university / major / degree / graduation date, plus one or two sentences you most want recruiters to remember.]">【请替换：学校/专业/学历/毕业时间，以及一两句你最想让招聘方记住的话。】</p>
+    <p data-zh="我认同团队合作、持续创新的工作文化，期待把科研中积累的方法用在真实的产品与工程问题上。" data-en="I value a culture of collaboration and continuous innovation, and I look forward to applying the methods I built in research to real products and engineering problems.">我认同团队合作、持续创新的工作文化，期待把科研中积累的方法用在真实的产品与工程问题上。</p>
+  </div>
+</section>
+
+<!-- 专业技能 -->
+<section id="skills" class="alt">
+  <div class="wrap">
+    <div class="sec-title"><span class="bar"></span><h2 data-zh="专业技能" data-en="Skills">专业技能</h2></div>
+    <div class="grid g4">
+      <div class="card"><div class="ic">◎</div>
+        <h3 data-zh="电磁场仿真" data-en="Electromagnetic Simulation">电磁场仿真</h3>
+        <p class="ph" data-zh="【请替换：常用软件，如 Maxwell / COMSOL / HFSS；做过的仿真类型】" data-en="[Replace: tools such as Maxwell / COMSOL / HFSS and the kinds of simulation you have done]">【请替换：常用软件，如 Maxwell / COMSOL / HFSS；做过的仿真类型】</p></div>
+      <div class="card"><div class="ic">⚡</div>
+        <h3 data-zh="电力电子" data-en="Power Electronics">电力电子</h3>
+        <p class="ph" data-zh="【请替换：拓扑（如逆变、DC-DC）、控制、PCB/样机经验】" data-en="[Replace: topologies (e.g. inverters, DC-DC), control, PCB / prototype experience]">【请替换：拓扑（如逆变、DC-DC）、控制、PCB/样机经验】</p></div>
+      <div class="card"><div class="ic">≋</div>
+        <h3 data-zh="无线电能传输" data-en="Wireless Power Transfer">无线电能传输</h3>
+        <p class="ph" data-zh="【请替换：线圈设计、补偿拓扑、效率与传输距离优化等】" data-en="[Replace: coil design, compensation topologies, efficiency and distance optimization, etc.]">【请替换：线圈设计、补偿拓扑、效率与传输距离优化等】</p></div>
+      <div class="card"><div class="ic">▦</div>
+        <h3 data-zh="电力系统优化" data-en="Power System Optimization">电力系统优化</h3>
+        <p class="ph" data-zh="【请替换：储能配置、调度优化；使用的工具，如 MATLAB / Python / 求解器】" data-en="[Replace: storage sizing, dispatch optimization; tools such as MATLAB / Python / solvers]">【请替换：储能配置、调度优化；使用的工具，如 MATLAB / Python / 求解器】</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 科研项目 -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-title"><span class="bar"></span><h2 data-zh="科研与项目经历" data-en="Research &amp; Projects">科研与项目经历</h2></div>
+    <div class="projects">
+
+      <article class="proj">
+        <header><span class="tag" data-zh="无线电能传输" data-en="WPT">无线电能传输</span>
+          <h3 class="ph" data-zh="科研经历一：【项目名称】" data-en="Research I: [Project Title]">科研经历一：【项目名称】</h3></header>
+        <dl class="rows">
+          <dt data-zh="背景" data-en="Background">背景</dt>
+          <dd class="ph" data-zh="【研究要解决的问题与应用场景，时间，所属课题组/课题】" data-en="[The problem and application scenario, time period, research group / grant]">【研究要解决的问题与应用场景，时间，所属课题组/课题】</dd>
+          <dt data-zh="我的工作" data-en="My Role">我的工作</dt>
+          <dd class="ph" data-zh="【你具体做了什么：仿真建模、线圈设计、电路搭建、实验测试等】" data-en="[What you did: simulation modeling, coil design, circuit build, experiments, etc.]">【你具体做了什么：仿真建模、线圈设计、电路搭建、实验测试等】</dd>
+          <dt data-zh="成果" data-en="Result">成果</dt>
+          <dd class="ph" data-zh="【可量化结果：效率、功率、距离、论文/专利/奖项】" data-en="[Quantified results: efficiency, power, distance, paper / patent / award]">【可量化结果：效率、功率、距离、论文/专利/奖项】</dd>
+        </dl>
+      </article>
+
+      <article class="proj">
+        <header><span class="tag" data-zh="无线电能传输" data-en="WPT">无线电能传输</span>
+          <h3 class="ph" data-zh="科研经历二：【项目名称】" data-en="Research II: [Project Title]">科研经历二：【项目名称】</h3></header>
+        <dl class="rows">
+          <dt data-zh="背景" data-en="Background">背景</dt>
+          <dd class="ph" data-zh="【研究背景与目标】" data-en="[Research background and goal]">【研究背景与目标】</dd>
+          <dt data-zh="我的工作" data-en="My Role">我的工作</dt>
+          <dd class="ph" data-zh="【方法与个人贡献】" data-en="[Methods and your personal contribution]">【方法与个人贡献】</dd>
+          <dt data-zh="成果" data-en="Result">成果</dt>
+          <dd class="ph" data-zh="【结果与数据】" data-en="[Results and data]">【结果与数据】</dd>
+        </dl>
+      </article>
+
+      <article class="proj">
+        <header><span class="tag" data-zh="无线电能传输" data-en="WPT">无线电能传输</span>
+          <h3 class="ph" data-zh="科研经历三：【项目名称】" data-en="Research III: [Project Title]">科研经历三：【项目名称】</h3></header>
+        <dl class="rows">
+          <dt data-zh="背景" data-en="Background">背景</dt>
+          <dd class="ph" data-zh="【研究背景与目标】" data-en="[Research background and goal]">【研究背景与目标】</dd>
+          <dt data-zh="我的工作" data-en="My Role">我的工作</dt>
+          <dd class="ph" data-zh="【方法与个人贡献】" data-en="[Methods and your personal contribution]">【方法与个人贡献】</dd>
+          <dt data-zh="成果" data-en="Result">成果</dt>
+          <dd class="ph" data-zh="【结果与数据】" data-en="[Results and data]">【结果与数据】</dd>
+        </dl>
+      </article>
+
+      <article class="proj">
+        <header><span class="tag" data-zh="电力系统优化" data-en="Power Systems">电力系统优化</span>
+          <h3 data-zh="毕业项目：储能电力系统优化" data-en="Graduation Project: Energy Storage Power System Optimization">毕业项目：储能电力系统优化</h3></header>
+        <dl class="rows">
+          <dt data-zh="背景" data-en="Background">背景</dt>
+          <dd class="ph" data-zh="【课题背景：如新能源接入下储能的配置或调度问题】" data-en="[Context: e.g. storage sizing or dispatch with renewable integration]">【课题背景：如新能源接入下储能的配置或调度问题】</dd>
+          <dt data-zh="我的工作" data-en="My Role">我的工作</dt>
+          <dd class="ph" data-zh="【建立的模型、使用的优化方法与工具】" data-en="[The model you built, optimization methods and tools used]">【建立的模型、使用的优化方法与工具】</dd>
+          <dt data-zh="成果" data-en="Result">成果</dt>
+          <dd class="ph" data-zh="【量化结果：成本降低、利用率提升、论文评分等】" data-en="[Quantified outcome: cost reduction, utilization gain, thesis grade, etc.]">【量化结果：成本降低、利用率提升、论文评分等】</dd>
+        </dl>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- 性格与工作方式 -->
+<section id="character" class="alt">
+  <div class="wrap">
+    <div class="sec-title"><span class="bar"></span><h2 data-zh="性格与工作方式" data-en="Character &amp; Working Style">性格与工作方式</h2></div>
+    <div class="grid g3">
+      <div class="card trait"><div class="num">01</div>
+        <h3 data-zh="严谨求证" data-en="Rigorous">严谨求证</h3>
+        <p class="ph" data-zh="【请用一个真实例子说明：例如在实验中如何反复核对数据、排查误差来源】" data-en="[Add a real example, e.g. how you cross-checked data and tracked down error sources in an experiment]">【请用一个真实例子说明：例如在实验中如何反复核对数据、排查误差来源】</p></div>
+      <div class="card trait"><div class="num">02</div>
+        <h3 data-zh="好奇与热情" data-en="Curious &amp; Passionate">好奇与热情</h3>
+        <p class="ph" data-zh="【例子：主动阅读文献、尝试新方法，或课题之外的探索】" data-en="[Example: reading papers on your own, trying new methods, side explorations]">【例子：主动阅读文献、尝试新方法，或课题之外的探索】</p></div>
+      <div class="card trait"><div class="num">03</div>
+        <h3 data-zh="协作沟通" data-en="Collaborative">协作沟通</h3>
+        <p class="ph" data-zh="【例子：与课题组成员配合、向导师汇报、跨方向沟通的经历】" data-en="[Example: working with teammates, reporting to your advisor, cross-discipline communication]">【例子：与课题组成员配合、向导师汇报、跨方向沟通的经历】</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 联系 -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <h2 data-zh="期待与你交流" data-en="Let's Talk">期待与你交流</h2>
+      <p data-zh="如果我的经历与贵团队的方向契合，欢迎联系我。" data-en="If my background fits your team's direction, I would be glad to hear from you.">如果我的经历与贵团队的方向契合，欢迎联系我。</p>
+      <div class="links">
+        <a href="mailto:your.email@example.com">✉ your.email@example.com</a>
+        <a href="https://www.linkedin.com/in/your-id" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="resume.pdf" target="_blank" rel="noopener" data-zh="简历 PDF" data-en="Résumé PDF">简历 PDF</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>© <span id="yr"></span> <span data-zh="郭晓燕" data-en="Anna-Yan Guo">郭晓燕</span></footer>
+
+<script>
+(function(){
+  var lang;
+  try { lang = localStorage.getItem('lang'); } catch(e){}
+  if(!lang) lang = (navigator.language||'zh').toLowerCase().indexOf('zh')===0 ? 'zh' : 'en';
+
+  var titles = {
+    zh:'郭晓燕 Anna-Yan Guo | 无线电能传输 · 电力电子',
+    en:'Anna-Yan Guo | Wireless Power Transfer · Power Electronics'
+  };
+
+  function apply(l){
+    lang = l;
+    try { localStorage.setItem('lang', l); } catch(e){}
+    document.documentElement.lang = (l==='zh') ? 'zh-CN' : 'en';
+    document.title = titles[l];
+    var nodes = document.querySelectorAll('[data-zh]');
+    for(var i=0;i<nodes.length;i++){
+      nodes[i].innerHTML = nodes[i].getAttribute('data-'+l);
+    }
+    document.getElementById('langBtn').textContent = (l==='zh') ? 'EN' : '中文';
+  }
+
+  document.getElementById('langBtn').addEventListener('click', function(){
+    apply(lang==='zh' ? 'en' : 'zh');
+  });
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  apply(lang);
+})();
+</script>
+</body>
+</html>
