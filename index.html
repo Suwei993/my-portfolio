@@ -3,13 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>郭夙韪 Suwei Guo | 无线电能传输 · 电力电子· 储能并网优化</title>
-<meta name="description" content="郭夙韪 (Suwei Guo) 的个人主页：无线电能传输、电力电子、电磁场仿真、储能并网调频、电力市场。">
+<title>郭晓燕 Anna-Yan Guo | 无线电能传输 · 电力电子</title>
+<meta name="description" content="郭晓燕 (Anna-Yan Guo) 的个人主页：电力电子、电磁场仿真、无线电能传输技术、储能并网控制优化、欧洲电力市场。">
 <style>
 :root{
   --blue:#2F4B7C;
   --blue-deep:#1F3358;
   --blue-soft:#E9EEF6;
+  --sky:#8EC3EE;        /* 科研板块浅蓝主色 */
+  --sky-bg:#EAF4FC;
+  --sky-text:#2A6BA6;
   --gray:#5B6573;
   --gray-light:#F3F4F6;
   --line:#DDE1E7;
@@ -30,16 +33,16 @@ a{color:inherit;text-decoration:none}
 .ph{background:linear-gradient(transparent 62%,rgba(245,166,35,.38) 62%)}
 
 /* 导航 */
-header{position:sticky;top:0;z-index:20;background:rgba(251,251,249,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.top{position:sticky;top:0;z-index:20;background:rgba(251,251,249,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:60px}
 .logo{font-weight:700;color:var(--blue);letter-spacing:.5px}
 .logo i{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--orange);margin-right:8px}
-nav ul{display:flex;gap:22px;list-style:none;align-items:center}
+nav ul{display:flex;gap:20px;list-style:none;align-items:center}
 nav a.link{font-size:14px;color:var(--gray);transition:color .2s}
 nav a.link:hover{color:var(--blue)}
 .lang{border:1.5px solid var(--blue);background:transparent;color:var(--blue);padding:4px 14px;border-radius:999px;font-size:13px;font-weight:600;cursor:pointer;transition:.2s}
 .lang:hover{background:var(--blue);color:#fff}
-@media(max-width:700px){nav a.link{display:none}}
+@media(max-width:800px){nav a.link{display:none}}
 
 /* 首屏 */
 .hero{padding:64px 0 40px;display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
@@ -67,32 +70,51 @@ section.alt{background:var(--gray-light)}
 .sec-title .bar{flex:0 0 36px;height:4px;border-radius:2px;background:var(--orange);align-self:center}
 .about p{max-width:760px;font-size:17px;color:#2b3444;margin-bottom:14px}
 
-/* 技能 */
+/* 卡片网格 */
 .grid{display:grid;gap:18px}
-.g4{grid-template-columns:repeat(4,1fr)}
+.skills{grid-template-columns:repeat(auto-fit,minmax(185px,1fr))}
 .g3{grid-template-columns:repeat(3,1fr)}
-@media(max-width:900px){.g4{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.g4,.g3{grid-template-columns:1fr}}
+@media(max-width:900px){.g3{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.g3{grid-template-columns:1fr}}
 .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;transition:.25s}
 .card:hover{transform:translateY(-3px);border-color:var(--orange);box-shadow:0 8px 22px rgba(47,75,124,.08)}
 .card .ic{width:38px;height:38px;border-radius:10px;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center;font-size:18px;margin-bottom:12px}
 .card h3{font-size:17px;color:var(--blue-deep);margin-bottom:6px}
 .card p{font-size:14.5px;color:var(--gray)}
 
-/* 项目 */
-.projects{display:grid;gap:20px}
-.proj{background:#fff;border:1px solid var(--line);border-left:5px solid var(--orange);border-radius:14px;padding:24px 26px}
-.proj header{position:static;background:none;backdrop-filter:none;border:0;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin-bottom:14px}
-.tag{font-size:12px;padding:3px 10px;border-radius:999px;background:var(--blue-soft);color:var(--blue);font-weight:600}
+/* 科研项目：浅蓝主色 */
+#projects{background:var(--sky-bg)}
+#projects .sec-title .bar{background:var(--sky)}
+.projects{display:grid;gap:22px}
+.proj{background:#fff;border:1px solid #CFE3F5;border-left:6px solid var(--sky);border-radius:14px;padding:24px 26px}
+.proj-head{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin-bottom:14px}
+.tag{font-size:12px;padding:3px 10px;border-radius:999px;background:#D6EAFA;color:var(--sky-text);font-weight:600}
 .proj h3{font-size:19px;color:var(--blue-deep)}
 .rows{display:grid;grid-template-columns:96px 1fr;gap:10px 18px}
-.rows dt{font-size:13px;font-weight:700;color:var(--orange);letter-spacing:.5px;padding-top:2px}
+.rows dt{font-size:13px;font-weight:700;color:var(--sky-text);letter-spacing:.5px;padding-top:2px}
 .rows dd{font-size:15px;color:#2b3444}
 @media(max-width:560px){.rows{grid-template-columns:1fr;gap:2px}.rows dd{margin-bottom:10px}}
 
-/* 性格 */
-.trait .num{font-size:30px;font-weight:800;color:var(--orange);line-height:1}
-.trait h3{margin-top:8px}
+/* 图片位 */
+.gallery{display:grid;gap:14px;margin-top:20px;grid-template-columns:1fr 1fr}
+.gallery.n1{grid-template-columns:minmax(0,560px)}
+.gallery .wide{grid-column:1/-1}
+@media(max-width:560px){.gallery{grid-template-columns:1fr}}
+.fig{margin:0}
+.shot{position:relative;border-radius:12px;overflow:hidden;background:#F2F8FD;border:1.5px dashed var(--sky);aspect-ratio:16/10}
+.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.shot .hint{position:absolute;inset:0;display:grid;place-items:center;text-align:center;font-size:13px;color:var(--sky-text);padding:12px}
+.shot.ok{border:1px solid #CFE3F5}
+.shot.ok .hint{display:none}
+.fig figcaption{font-size:13px;color:var(--gray);margin-top:7px;text-align:center}
+
+/* 成长轨迹 */
+.tl{list-style:none;position:relative;margin-left:8px;padding-left:30px;border-left:3px solid var(--sky)}
+.tl li{position:relative;background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin-bottom:20px}
+.tl li::before{content:"";position:absolute;left:-41px;top:26px;width:15px;height:15px;border-radius:50%;background:var(--orange);border:3px solid var(--bg)}
+.tl .when{font-size:13px;font-weight:700;color:#9A6200;letter-spacing:.5px}
+.tl h3{font-size:18px;color:var(--blue-deep);margin:2px 0 6px}
+.tl p{font-size:15px;color:#2b3444}
 
 /* 联系 */
 .contact{background:var(--blue-deep);color:#fff;border-radius:20px;padding:42px 32px;text-align:center}
@@ -114,15 +136,16 @@ footer{text-align:center;color:var(--gray);font-size:13px;padding:30px 0 40px}
 </head>
 <body>
 
-<header>
+<header class="top">
   <div class="wrap nav">
-    <a href="#top" class="logo"><i></i><span data-zh="郭夙韪" data-en="Suwei Guo">郭晓燕</span></a>
+    <a href="#top" class="logo"><i></i><span data-zh="郭晓燕" data-en="Anna-Yan Guo">郭晓燕</span></a>
     <nav>
       <ul>
         <li><a class="link" href="#about" data-zh="关于我" data-en="About">关于我</a></li>
         <li><a class="link" href="#skills" data-zh="专业技能" data-en="Skills">专业技能</a></li>
         <li><a class="link" href="#projects" data-zh="科研项目" data-en="Projects">科研项目</a></li>
-        <li><a class="link" href="#character" data-zh="工作方式" data-en="Working Style">工作方式</a></li>
+        <li><a class="link" href="#journey" data-zh="成长轨迹" data-en="Career Path">成长轨迹</a></li>
+        <li><a class="link" href="#strengths" data-zh="优势" data-en="Strengths">优势</a></li>
         <li><a class="link" href="#contact" data-zh="联系" data-en="Contact">联系</a></li>
         <li><button class="lang" id="langBtn" type="button" aria-label="切换语言 / Switch language">EN</button></li>
       </ul>
@@ -159,19 +182,16 @@ footer{text-align:center;color:var(--gray);font-size:13px;padding:30px 0 40px}
       <linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#2F4B7C"/><stop offset="1" stop-color="#5B7BB0"/></linearGradient>
     </defs>
     <rect x="8" y="30" width="424" height="240" rx="26" fill="#E9EEF6"/>
-    <!-- 发射线圈 -->
     <g fill="none" stroke="url(#g1)" stroke-width="5" stroke-linecap="round">
       <ellipse cx="95" cy="150" rx="26" ry="82"/>
       <ellipse cx="95" cy="150" rx="17" ry="60" opacity=".7"/>
       <ellipse cx="95" cy="150" rx="8" ry="38" opacity=".5"/>
     </g>
-    <!-- 接收线圈 -->
     <g fill="none" stroke="#5B6573" stroke-width="5" stroke-linecap="round">
       <ellipse cx="345" cy="150" rx="26" ry="82"/>
       <ellipse cx="345" cy="150" rx="17" ry="60" opacity=".7"/>
       <ellipse cx="345" cy="150" rx="8" ry="38" opacity=".5"/>
     </g>
-    <!-- 磁场线 -->
     <g fill="none" stroke="#2F4B7C" stroke-width="1.6" stroke-dasharray="4 6" opacity=".55">
       <path d="M121 150 C 190 80, 250 80, 319 150"/>
       <path d="M121 150 C 190 220, 250 220, 319 150"/>
@@ -179,11 +199,9 @@ footer{text-align:center;color:var(--gray);font-size:13px;padding:30px 0 40px}
     </g>
     <circle class="ring" cx="220" cy="150" r="36" fill="none" stroke="#F5A623" stroke-width="2"/>
     <circle class="ring" cx="220" cy="150" r="56" fill="none" stroke="#F5A623" stroke-width="1.2" style="animation-delay:.7s"/>
-    <!-- 能量脉冲 -->
     <g transform="translate(125,150)" fill="#F5A623">
       <circle class="pulse" r="6"/><circle class="pulse d2" r="6"/><circle class="pulse d3" r="6"/>
     </g>
-    <!-- 小灯泡：负载 -->
     <circle cx="395" cy="150" r="11" fill="#F5A623" opacity=".9"/>
     <path d="M371 150 H384" stroke="#5B6573" stroke-width="3" stroke-linecap="round"/>
     <text x="95" y="258" text-anchor="middle" font-size="12" fill="#5B6573" font-family="sans-serif">TX</text>
@@ -195,7 +213,7 @@ footer{text-align:center;color:var(--gray);font-size:13px;padding:30px 0 40px}
 <section id="about" class="about">
   <div class="wrap">
     <div class="sec-title"><span class="bar"></span><h2 data-zh="关于我" data-en="About Me">关于我</h2></div>
-    <p data-zh="我专注于无线电能传输与电力电子方向，从电磁场仿真、线圈与电路设计，到系统层面的储能与电力系统优化，都有实际的科研与项目经历。我享受把复杂的物理问题拆解、建模、验证，并最终落到可运行方案上的过程。" data-en="My work centers on wireless power transfer and power electronics, from electromagnetic field simulation and coil and circuit design to system-level energy storage and power system optimization. I enjoy breaking complex physical problems down, modeling them, validating them, and turning them into working solutions.">我专注于无线电能传输与电力电子方向，从电磁场仿真、线圈与电路设计，到系统层面的储能与电力系统优化，都有实际的科研与项目经历。我享受把复杂的物理问题拆解、建模、验证，并最终落到可运行方案上的过程。</p>
+    <p data-zh="我专注于无线电能传输与电力电子方向，从电磁场仿真、线圈与电路设计，到系统层面的储能并网控制优化与欧洲电力市场，都有实际的科研与项目经历。我享受把复杂的物理问题拆解、建模、验证，并最终落到可运行方案上的过程。" data-en="My work centers on wireless power transfer and power electronics, from electromagnetic field simulation and coil and circuit design to system-level grid-connected storage control and the European electricity market. I enjoy breaking complex physical problems down, modeling them, validating them, and turning them into working solutions.">我专注于无线电能传输与电力电子方向，从电磁场仿真、线圈与电路设计，到系统层面的储能并网控制优化与欧洲电力市场，都有实际的科研与项目经历。我享受把复杂的物理问题拆解、建模、验证，并最终落到可运行方案上的过程。</p>
     <p class="ph" data-zh="【请替换：学校/专业/学历/毕业时间，以及一两句你最想让招聘方记住的话。】" data-en="[Replace: university / major / degree / graduation date, plus one or two sentences you most want recruiters to remember.]">【请替换：学校/专业/学历/毕业时间，以及一两句你最想让招聘方记住的话。】</p>
     <p data-zh="我认同团队合作、持续创新的工作文化，期待把科研中积累的方法用在真实的产品与工程问题上。" data-en="I value a culture of collaboration and continuous innovation, and I look forward to applying the methods I built in research to real products and engineering problems.">我认同团队合作、持续创新的工作文化，期待把科研中积累的方法用在真实的产品与工程问题上。</p>
   </div>
@@ -205,32 +223,36 @@ footer{text-align:center;color:var(--gray);font-size:13px;padding:30px 0 40px}
 <section id="skills" class="alt">
   <div class="wrap">
     <div class="sec-title"><span class="bar"></span><h2 data-zh="专业技能" data-en="Skills">专业技能</h2></div>
-    <div class="grid g4">
-      <div class="card"><div class="ic">◎</div>
-        <h3 data-zh="电磁场仿真" data-en="Electromagnetic Simulation">电磁场仿真</h3>
-        <p class="ph" data-zh="【请替换：常用软件，如 Maxwell / COMSOL / HFSS；做过的仿真类型】" data-en="[Replace: tools such as Maxwell / COMSOL / HFSS and the kinds of simulation you have done]">【请替换：常用软件，如 Maxwell / COMSOL / HFSS；做过的仿真类型】</p></div>
+    <div class="grid skills">
       <div class="card"><div class="ic">⚡</div>
         <h3 data-zh="电力电子" data-en="Power Electronics">电力电子</h3>
         <p class="ph" data-zh="【请替换：拓扑（如逆变、DC-DC）、控制、PCB/样机经验】" data-en="[Replace: topologies (e.g. inverters, DC-DC), control, PCB / prototype experience]">【请替换：拓扑（如逆变、DC-DC）、控制、PCB/样机经验】</p></div>
+      <div class="card"><div class="ic">◎</div>
+        <h3 data-zh="电磁场仿真" data-en="Electromagnetic Simulation">电磁场仿真</h3>
+        <p class="ph" data-zh="【请替换：常用软件，如 Maxwell / COMSOL / HFSS；做过的仿真类型】" data-en="[Replace: tools such as Maxwell / COMSOL / HFSS and the kinds of simulation you have done]">【请替换：常用软件，如 Maxwell / COMSOL / HFSS；做过的仿真类型】</p></div>
       <div class="card"><div class="ic">≋</div>
-        <h3 data-zh="无线电能传输" data-en="Wireless Power Transfer">无线电能传输</h3>
+        <h3 data-zh="无线电能传输技术" data-en="Wireless Power Transfer Technology">无线电能传输技术</h3>
         <p class="ph" data-zh="【请替换：线圈设计、补偿拓扑、效率与传输距离优化等】" data-en="[Replace: coil design, compensation topologies, efficiency and distance optimization, etc.]">【请替换：线圈设计、补偿拓扑、效率与传输距离优化等】</p></div>
       <div class="card"><div class="ic">▦</div>
-        <h3 data-zh="电力系统优化" data-en="Power System Optimization">电力系统优化</h3>
-        <p class="ph" data-zh="【请替换：储能配置、调度优化；使用的工具，如 MATLAB / Python / 求解器】" data-en="[Replace: storage sizing, dispatch optimization; tools such as MATLAB / Python / solvers]">【请替换：储能配置、调度优化；使用的工具，如 MATLAB / Python / 求解器】</p></div>
+        <h3 data-zh="储能并网控制优化" data-en="Grid-Connected Storage Control &amp; Optimization">储能并网控制优化</h3>
+        <p class="ph" data-zh="【请替换：调频、能量管理、并网逆变器控制；使用的工具，如 MATLAB / Python】" data-en="[Replace: frequency regulation, energy management, grid-tied inverter control; tools such as MATLAB / Python]">【请替换：调频、能量管理、并网逆变器控制；使用的工具，如 MATLAB / Python】</p></div>
+      <div class="card"><div class="ic">€</div>
+        <h3 data-zh="欧洲电力市场" data-en="European Electricity Market">欧洲电力市场</h3>
+        <p class="ph" data-zh="【请替换：熟悉的市场环节，如日前市场、调频/辅助服务市场、电价分析】" data-en="[Replace: market segments you know, e.g. day-ahead, frequency / ancillary services, price analysis]">【请替换：熟悉的市场环节，如日前市场、调频/辅助服务市场、电价分析】</p></div>
     </div>
   </div>
 </section>
 
-<!-- 科研项目 -->
+<!-- 科研与项目经历（浅蓝主色，含图片位） -->
 <section id="projects">
   <div class="wrap">
     <div class="sec-title"><span class="bar"></span><h2 data-zh="科研与项目经历" data-en="Research &amp; Projects">科研与项目经历</h2></div>
     <div class="projects">
 
+      <!-- 科研经历一：1 张图片 -->
       <article class="proj">
-        <header><span class="tag" data-zh="无线电能传输" data-en="WPT">无线电能传输</span>
-          <h3 class="ph" data-zh="科研经历一：【项目名称】" data-en="Research I: [Project Title]">科研经历一：【项目名称】</h3></header>
+        <div class="proj-head"><span class="tag" data-zh="无线电能传输" data-en="WPT">无线电能传输</span>
+          <h3 class="ph" data-zh="科研经历一：【项目名称】" data-en="Research I: [Project Title]">科研经历一：【项目名称】</h3></div>
         <dl class="rows">
           <dt data-zh="背景" data-en="Background">背景</dt>
           <dd class="ph" data-zh="【研究要解决的问题与应用场景，时间，所属课题组/课题】" data-en="[The problem and application scenario, time period, research group / grant]">【研究要解决的问题与应用场景，时间，所属课题组/课题】</dd>
@@ -239,11 +261,16 @@ footer{text-align:center;color:var(--gray);font-size:13px;padding:30px 0 40px}
           <dt data-zh="成果" data-en="Result">成果</dt>
           <dd class="ph" data-zh="【可量化结果：效率、功率、距离、论文/专利/奖项】" data-en="[Quantified results: efficiency, power, distance, paper / patent / award]">【可量化结果：效率、功率、距离、论文/专利/奖项】</dd>
         </dl>
+        <div class="gallery n1">
+          <figure class="fig"><div class="shot"><img src="images/wpt1-1.jpg" alt="Research I figure 1" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><span class="hint" data-zh="图片位 · 放入 images/wpt1-1.jpg" data-en="Image slot · put images/wpt1-1.jpg here">图片位 · 放入 images/wpt1-1.jpg</span></div>
+            <figcaption class="ph" data-zh="【图片说明】" data-en="[Caption]">【图片说明】</figcaption></figure>
+        </div>
       </article>
 
+      <!-- 科研经历二：2 张图片 -->
       <article class="proj">
-        <header><span class="tag" data-zh="无线电能传输" data-en="WPT">无线电能传输</span>
-          <h3 class="ph" data-zh="科研经历二：【项目名称】" data-en="Research II: [Project Title]">科研经历二：【项目名称】</h3></header>
+        <div class="proj-head"><span class="tag" data-zh="无线电能传输" data-en="WPT">无线电能传输</span>
+          <h3 class="ph" data-zh="科研经历二：【项目名称】" data-en="Research II: [Project Title]">科研经历二：【项目名称】</h3></div>
         <dl class="rows">
           <dt data-zh="背景" data-en="Background">背景</dt>
           <dd class="ph" data-zh="【研究背景与目标】" data-en="[Research background and goal]">【研究背景与目标】</dd>
@@ -252,11 +279,18 @@ footer{text-align:center;color:var(--gray);font-size:13px;padding:30px 0 40px}
           <dt data-zh="成果" data-en="Result">成果</dt>
           <dd class="ph" data-zh="【结果与数据】" data-en="[Results and data]">【结果与数据】</dd>
         </dl>
+        <div class="gallery">
+          <figure class="fig"><div class="shot"><img src="images/wpt2-1.jpg" alt="Research II figure 1" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><span class="hint" data-zh="图片位 · 放入 images/wpt2-1.jpg" data-en="Image slot · put images/wpt2-1.jpg here">图片位 · 放入 images/wpt2-1.jpg</span></div>
+            <figcaption class="ph" data-zh="【图片说明】" data-en="[Caption]">【图片说明】</figcaption></figure>
+          <figure class="fig"><div class="shot"><img src="images/wpt2-2.jpg" alt="Research II figure 2" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><span class="hint" data-zh="图片位 · 放入 images/wpt2-2.jpg" data-en="Image slot · put images/wpt2-2.jpg here">图片位 · 放入 images/wpt2-2.jpg</span></div>
+            <figcaption class="ph" data-zh="【图片说明】" data-en="[Caption]">【图片说明】</figcaption></figure>
+        </div>
       </article>
 
+      <!-- 科研经历三：2 张图片 -->
       <article class="proj">
-        <header><span class="tag" data-zh="无线电能传输" data-en="WPT">无线电能传输</span>
-          <h3 class="ph" data-zh="科研经历三：【项目名称】" data-en="Research III: [Project Title]">科研经历三：【项目名称】</h3></header>
+        <div class="proj-head"><span class="tag" data-zh="无线电能传输" data-en="WPT">无线电能传输</span>
+          <h3 class="ph" data-zh="科研经历三：【项目名称】" data-en="Research III: [Project Title]">科研经历三：【项目名称】</h3></div>
         <dl class="rows">
           <dt data-zh="背景" data-en="Background">背景</dt>
           <dd class="ph" data-zh="【研究背景与目标】" data-en="[Research background and goal]">【研究背景与目标】</dd>
@@ -265,39 +299,74 @@ footer{text-align:center;color:var(--gray);font-size:13px;padding:30px 0 40px}
           <dt data-zh="成果" data-en="Result">成果</dt>
           <dd class="ph" data-zh="【结果与数据】" data-en="[Results and data]">【结果与数据】</dd>
         </dl>
+        <div class="gallery">
+          <figure class="fig"><div class="shot"><img src="images/wpt3-1.jpg" alt="Research III figure 1" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><span class="hint" data-zh="图片位 · 放入 images/wpt3-1.jpg" data-en="Image slot · put images/wpt3-1.jpg here">图片位 · 放入 images/wpt3-1.jpg</span></div>
+            <figcaption class="ph" data-zh="【图片说明】" data-en="[Caption]">【图片说明】</figcaption></figure>
+          <figure class="fig"><div class="shot"><img src="images/wpt3-2.jpg" alt="Research III figure 2" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><span class="hint" data-zh="图片位 · 放入 images/wpt3-2.jpg" data-en="Image slot · put images/wpt3-2.jpg here">图片位 · 放入 images/wpt3-2.jpg</span></div>
+            <figcaption class="ph" data-zh="【图片说明】" data-en="[Caption]">【图片说明】</figcaption></figure>
+        </div>
       </article>
 
+      <!-- 硕士毕业项目：主图 + 频率图 + 电价图 -->
       <article class="proj">
-        <header><span class="tag" data-zh="电力系统优化" data-en="Power Systems">电力系统优化</span>
-          <h3 data-zh="毕业项目：储能电力系统优化" data-en="Graduation Project: Energy Storage Power System Optimization">毕业项目：储能电力系统优化</h3></header>
+        <div class="proj-head"><span class="tag" data-zh="储能并网 · 调频" data-en="Storage · Frequency Regulation">储能并网 · 调频</span>
+          <h3 data-zh="硕士毕业项目：家庭储能并网参与调频" data-en="Master's Thesis: Home Battery Storage Participating in Grid Frequency Regulation">硕士毕业项目：家庭储能并网参与调频</h3></div>
         <dl class="rows">
           <dt data-zh="背景" data-en="Background">背景</dt>
-          <dd class="ph" data-zh="【课题背景：如新能源接入下储能的配置或调度问题】" data-en="[Context: e.g. storage sizing or dispatch with renewable integration]">【课题背景：如新能源接入下储能的配置或调度问题】</dd>
+          <dd class="ph" data-zh="【课题背景：如分布式家庭储能聚合后参与电网调频的意义与市场环境】" data-en="[Context: e.g. why aggregated home storage can support frequency regulation, and the market environment]">【课题背景：如分布式家庭储能聚合后参与电网调频的意义与市场环境】</dd>
           <dt data-zh="我的工作" data-en="My Role">我的工作</dt>
-          <dd class="ph" data-zh="【建立的模型、使用的优化方法与工具】" data-en="[The model you built, optimization methods and tools used]">【建立的模型、使用的优化方法与工具】</dd>
+          <dd class="ph" data-zh="【建立的模型、并网控制策略、优化方法与使用的工具】" data-en="[The model you built, grid-connected control strategy, optimization method and tools used]">【建立的模型、并网控制策略、优化方法与使用的工具】</dd>
           <dt data-zh="成果" data-en="Result">成果</dt>
-          <dd class="ph" data-zh="【量化结果：成本降低、利用率提升、论文评分等】" data-en="[Quantified outcome: cost reduction, utilization gain, thesis grade, etc.]">【量化结果：成本降低、利用率提升、论文评分等】</dd>
+          <dd class="ph" data-zh="【量化结果：调频效果、收益提升、论文评分等】" data-en="[Quantified outcome: regulation performance, revenue gain, thesis grade, etc.]">【量化结果：调频效果、收益提升、论文评分等】</dd>
         </dl>
+        <div class="gallery">
+          <figure class="fig wide"><div class="shot"><img src="images/storage-main.svg" alt="Home battery storage providing frequency regulation" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><span class="hint" data-zh="图片位 · images/storage-main.svg" data-en="Image slot · images/storage-main.svg">图片位 · images/storage-main.svg</span></div>
+            <figcaption data-zh="项目主图：家庭储能并网参与调频（示意图，可替换为你自己的系统图）" data-en="Main figure: home battery storage in grid frequency regulation (illustrative; replace with your own system diagram)">项目主图：家庭储能并网参与调频（示意图，可替换为你自己的系统图）</figcaption></figure>
+          <figure class="fig"><div class="shot"><img src="images/eu-frequency.svg" alt="Grid frequency fluctuation in Continental Europe" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><span class="hint" data-zh="图片位 · images/eu-frequency.svg" data-en="Image slot · images/eu-frequency.svg">图片位 · images/eu-frequency.svg</span></div>
+            <figcaption data-zh="欧洲电网频率波动（示意图，非实测数据）" data-en="Grid frequency fluctuation in Europe (illustrative, not measured data)">欧洲电网频率波动（示意图，非实测数据）</figcaption></figure>
+          <figure class="fig"><div class="shot"><img src="images/eu-price.svg" alt="Day-ahead electricity price in the European market" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><span class="hint" data-zh="图片位 · images/eu-price.svg" data-en="Image slot · images/eu-price.svg">图片位 · images/eu-price.svg</span></div>
+            <figcaption data-zh="欧洲日前电价曲线（示意图，非真实电价）" data-en="Day-ahead electricity price profile in Europe (illustrative, not market data)">欧洲日前电价曲线（示意图，非真实电价）</figcaption></figure>
+        </div>
       </article>
 
     </div>
   </div>
 </section>
 
-<!-- 性格与工作方式 -->
-<section id="character" class="alt">
+<!-- 成长轨迹 -->
+<section id="journey">
   <div class="wrap">
-    <div class="sec-title"><span class="bar"></span><h2 data-zh="性格与工作方式" data-en="Character &amp; Working Style">性格与工作方式</h2></div>
+    <div class="sec-title"><span class="bar"></span><h2 data-zh="成长轨迹（实习与工作经历）" data-en="Career Path (Internships &amp; Work Experience)">成长轨迹（实习与工作经历）</h2></div>
+    <!-- 需要更多条目时，复制下面整个 <li>…</li> 即可，按时间从新到旧排列 -->
+    <ol class="tl">
+      <li>
+        <div class="when ph" data-zh="【时间，如 2025.03 – 2025.08】" data-en="[Dates, e.g. Mar 2025 – Aug 2025]">【时间，如 2025.03 – 2025.08】</div>
+        <h3 class="ph" data-zh="【公司 / 机构 · 实习岗位】" data-en="[Company / Institution · Internship Role]">【公司 / 机构 · 实习岗位】</h3>
+        <p class="ph" data-zh="【做了什么、用到什么技能、取得了什么结果，以及这段经历带给你的成长】" data-en="[What you did, the skills you used, the outcome, and how it helped you grow]">【做了什么、用到什么技能、取得了什么结果，以及这段经历带给你的成长】</p>
+      </li>
+      <li>
+        <div class="when ph" data-zh="【时间】" data-en="[Dates]">【时间】</div>
+        <h3 class="ph" data-zh="【公司 / 机构 · 工作岗位】" data-en="[Company / Institution · Job Title]">【公司 / 机构 · 工作岗位】</h3>
+        <p class="ph" data-zh="【职责与成果，尽量写可量化的结果】" data-en="[Responsibilities and results, with quantified outcomes where possible]">【职责与成果，尽量写可量化的结果】</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- 优势 -->
+<section id="strengths" class="alt">
+  <div class="wrap">
+    <div class="sec-title"><span class="bar"></span><h2 data-zh="我的优势" data-en="My Strengths">我的优势</h2></div>
     <div class="grid g3">
-      <div class="card trait"><div class="num">01</div>
-        <h3 data-zh="严谨求证" data-en="Rigorous">严谨求证</h3>
-        <p class="ph" data-zh="【请用一个真实例子说明：例如在实验中如何反复核对数据、排查误差来源】" data-en="[Add a real example, e.g. how you cross-checked data and tracked down error sources in an experiment]">【请用一个真实例子说明：例如在实验中如何反复核对数据、排查误差来源】</p></div>
-      <div class="card trait"><div class="num">02</div>
-        <h3 data-zh="好奇与热情" data-en="Curious &amp; Passionate">好奇与热情</h3>
-        <p class="ph" data-zh="【例子：主动阅读文献、尝试新方法，或课题之外的探索】" data-en="[Example: reading papers on your own, trying new methods, side explorations]">【例子：主动阅读文献、尝试新方法，或课题之外的探索】</p></div>
-      <div class="card trait"><div class="num">03</div>
-        <h3 data-zh="协作沟通" data-en="Collaborative">协作沟通</h3>
-        <p class="ph" data-zh="【例子：与课题组成员配合、向导师汇报、跨方向沟通的经历】" data-en="[Example: working with teammates, reporting to your advisor, cross-discipline communication]">【例子：与课题组成员配合、向导师汇报、跨方向沟通的经历】</p></div>
+      <div class="card"><div class="ic">✦</div>
+        <h3 data-zh="热爱研究" data-en="Passion for Research">热爱研究</h3>
+        <p data-zh="对电力电子与无线电能传输研究怀有真诚的热爱，愿意长期深耕，把一个问题研究透。" data-en="A genuine passion for power electronics and wireless power transfer research, and the patience to dig into a problem until it is truly understood.">对电力电子与无线电能传输研究怀有真诚的热爱，愿意长期深耕，把一个问题研究透。</p></div>
+      <div class="card"><div class="ic">◆</div>
+        <h3 data-zh="踏实 · 严谨 · 努力" data-en="Diligent · Rigorous · Hard-working">踏实 · 严谨 · 努力</h3>
+        <p data-zh="做事踏实、严谨，对数据和细节负责，遇到困难愿意花时间一步步攻克。" data-en="I work diligently and rigorously, take responsibility for data and details, and work through difficulties step by step.">做事踏实、严谨，对数据和细节负责，遇到困难愿意花时间一步步攻克。</p></div>
+      <div class="card"><div class="ic">●</div>
+        <h3 data-zh="开朗友善 · 合作共赢" data-en="Cheerful · Friendly · Win-win Teamwork">开朗友善 · 合作共赢</h3>
+        <p data-zh="性格开朗、友善，重视团结协作，相信合作共赢，愿意与团队共同成长。" data-en="Cheerful and friendly, I value teamwork and win-win cooperation, and I am glad to grow together with my team.">性格开朗、友善，重视团结协作，相信合作共赢，愿意与团队共同成长。</p></div>
     </div>
   </div>
 </section>
